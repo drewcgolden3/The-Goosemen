@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Goosemen — Bethlehem, PA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F8F4EC;
+    --cream-dark: #EFE8D8;
+    --brown: #3D2B1F;
+    --brown-mid: #6B4C38;
+    --brown-light: #A07850;
+    --gold: #C4922A;
+    --gold-light: #E8B84B;
+    --red: #8B2A2A;
+    --green-muted: #4A5E3A;
+    --text-main: #2A1E14;
+    --text-muted: #7A6050;
+    --border: rgba(61,43,31,0.15);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-main);
+    line-height: 1.7;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--brown);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5vw;
+    height: 60px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .nav-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--gold-light);
+    font-size: 1.2rem;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold-light); }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--brown);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://residenttouristbethlehempa.com/wp-content/uploads/2015/05/the-goose-7.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.18;
+  }
+
+  .hero-texture {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(255,255,255,0.01) 2px,
+      rgba(255,255,255,0.01) 4px
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 10vw;
+    max-width: 900px;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 em {
+    color: var(--gold-light);
+    font-style: italic;
+  }
+
+  .hero-sub {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.15rem;
+    color: rgba(248,244,236,0.72);
+    max-width: 480px;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--brown);
+    padding: 0.85rem 2rem;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--cream);
+    padding: 0.85rem 2rem;
+    border: 1px solid rgba(248,244,236,0.4);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); }
+
+  /* ─── BADGE BAR ─── */
+  .badge-bar {
+    background: var(--gold);
+    padding: 0.85rem 5vw;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .badge-bar-item {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brown);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .badge-bar-item::before {
+    content: '★';
+    font-size: 0.7rem;
+  }
+
+  /* ─── SECTION SHARED ─── */
+  section { padding: 6rem 5vw; }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--brown);
+    margin-bottom: 1rem;
+  }
+
+  .section-intro {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 560px;
+    line-height: 1.85;
+    font-weight: 300;
+  }
+
+  /* ─── ABOUT ─── */
+  .about {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5vw;
+    align-items: center;
+  }
+
+  .about-image-wrap {
+    position: relative;
+  }
+
+  .about-image-wrap img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .about-image-accent {
+    position: absolute;
+    bottom: -18px;
+    right: -18px;
+    width: 80%;
+    height: 80%;
+    border: 2px solid var(--gold);
+    z-index: -1;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .stat-box {
+    padding: 1.4rem 1.5rem;
+    border-left: 3px solid var(--gold);
+    background: var(--cream-dark);
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--brown);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 4px;
+    font-weight: 400;
+  }
+
+  /* ─── GALLERY ─── */
+  .gallery-section {
+    background: var(--cream-dark);
+    padding: 6rem 5vw;
+  }
+
+  .gallery-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 1rem;
+  }
+
+  .gallery-item {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .gallery-item.tall {
+    grid-row: span 2;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .gallery-item:hover img { transform: scale(1.03); }
+
+  .gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem 1.2rem 1rem;
+    background: linear-gradient(transparent, rgba(42,30,20,0.7));
+    color: var(--cream);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .gallery-item:hover .gallery-caption { opacity: 1; }
+
+  /* ─── MENU ─── */
+  .menu-section {
+    background: var(--brown);
+    color: var(--cream);
+    padding: 6rem 5vw;
+  }
+
+  .menu-section .section-title { color: var(--cream); }
+  .menu-section .section-intro { color: rgba(248,244,236,0.65); }
+
+  .menu-tabs {
+    display: flex;
+    gap: 0;
+    margin: 3rem 0 2.5rem;
+    border-bottom: 1px solid rgba(196,146,42,0.3);
+    overflow-x: auto;
+    padding-bottom: 0;
+  }
+
+  .menu-tab {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgba(248,244,236,0.5);
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .menu-tab:hover { color: var(--gold-light); }
+  .menu-tab.active { color: var(--gold-light); border-bottom-color: var(--gold); }
+
+  .menu-panel { display: none; }
+  .menu-panel.active { display: block; }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 0;
+  }
+
+  .menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid rgba(248,244,236,0.07);
+    gap: 1.5rem;
+  }
+
+  .menu-item-info {}
+
+  .menu-item-name {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1rem;
+    color: var(--cream);
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  .menu-item-desc {
+    font-size: 0.8rem;
+    color: rgba(248,244,236,0.45);
+    margin-top: 3px;
+    font-style: italic;
+  }
+
+  .menu-item-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    color: var(--gold-light);
+    font-weight: 400;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .menu-note {
+    margin-top: 2.5rem;
+    padding: 1.2rem 1.5rem;
+    border: 1px solid rgba(196,146,42,0.25);
+    font-size: 0.85rem;
+    color: rgba(248,244,236,0.5);
+    font-style: italic;
+  }
+
+  /* ─── THE GANDER ROOM ─── */
+  .gander-section {
+    background: var(--cream-dark);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: 520px;
+  }
+
+  .gander-image {
+    background: url('https://residenttouristbethlehempa.com/wp-content/uploads/2015/05/the-goose-6.jpg') center/cover;
+    min-height: 460px;
+  }
+
+  .gander-content {
+    padding: 5rem 4vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .gander-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-style: italic;
+    color: var(--brown);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .gander-logo span {
+    display: block;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .gander-content p {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.9;
+    margin: 1.8rem 0 2.2rem;
+    max-width: 420px;
+  }
+
+  .gander-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .gander-feat {
+    font-size: 0.85rem;
+    color: var(--brown-mid);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .gander-feat::before {
+    content: '—';
+    color: var(--gold);
+    font-weight: 300;
+  }
+
+  /* ─── REVIEWS ─── */
+  .reviews-section {
+    background: var(--cream);
+    padding: 6rem 5vw;
+  }
+
+  .reviews-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4vw;
+    align-items: end;
+    margin-bottom: 4rem;
+  }
+
+  .rating-display {
+    text-align: right;
+  }
+
+  .rating-big {
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem;
+    font-weight: 700;
+    color: var(--brown);
+    line-height: 1;
+  }
+
+  .rating-stars {
+    color: var(--gold);
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+    margin: 6px 0 4px;
+  }
+
+  .rating-count {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .review-card {
+    background: var(--cream-dark);
+    padding: 2rem 1.8rem;
+    position: relative;
+  }
+
+  .review-quote {
+    font-size: 3.5rem;
+    line-height: 0.8;
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0.8rem;
+    opacity: 0.6;
+  }
+
+  .review-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-main);
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+
+  .review-meta {
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .reviewer-name {
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--brown);
+  }
+
+  .reviewer-stars {
+    color: var(--gold);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+  }
+
+  .review-source {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  /* ─── HOURS / CONTACT ─── */
+  .contact-section {
+    background: var(--brown);
+    color: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+
+  .contact-col {
+    padding: 5rem 3.5vw;
+    border-right: 1px solid rgba(248,244,236,0.1);
+  }
+
+  .contact-col:last-child { border-right: none; }
+
+  .contact-col-title {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(248,244,236,0.07);
+    font-size: 0.9rem;
+    color: rgba(248,244,236,0.75);
+  }
+
+  .hours-day { font-weight: 400; }
+  .hours-time { color: var(--gold-light); font-weight: 300; }
+
+  .contact-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(196,146,42,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1rem;
+    color: var(--gold);
+    margin-top: 2px;
+  }
+
+  .contact-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(248,244,236,0.4);
+    margin-bottom: 4px;
+  }
+
+  .contact-value {
+    font-size: 0.95rem;
+    color: rgba(248,244,236,0.85);
+    line-height: 1.5;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 2rem;
+  }
+
+  .social-link {
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(248,244,236,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(248,244,236,0.6);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .social-link:hover { border-color: var(--gold); color: var(--gold-light); }
+
+  .map-embed {
+    width: 100%;
+    aspect-ratio: 1;
+    border: none;
+    display: block;
+    opacity: 0.85;
+    filter: grayscale(20%);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--text-main);
+    padding: 2.5rem 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid var(--gold);
+  }
+
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-legal {
+    font-size: 0.75rem;
+    color: rgba(248,244,236,0.35);
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── DIVIDER ─── */
+  .ornament-divider {
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 1rem;
+    color: var(--gold);
+    letter-spacing: 0.5em;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .about { grid-template-columns: 1fr; }
+    .gander-section { grid-template-columns: 1fr; }
+    .reviews-header { grid-template-columns: 1fr; }
+    .rating-display { text-align: left; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .contact-section { grid-template-columns: 1fr; }
+    .contact-col { border-right: none; border-bottom: 1px solid rgba(248,244,236,0.08); padding: 3rem 5vw; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-item.tall { grid-row: span 1; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    nav { padding: 0 4vw; }
+    .nav-links { gap: 1.2rem; }
+    .hero-content { padding: 0 6vw; }
+  }
+
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .about-stats { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">The Goosemen</a>
+  <ul class="nav-links">
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#gander">The Gander Room</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Visit Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-texture"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Est. Since the 1980s · Bethlehem, PA</div>
+    <h1>Real food.<br><em>Real people.</em></h1>
+    <p class="hero-sub">Family-run deli at the heart of Southside Bethlehem. Piled-high hoagies, fresh-cut meats, and more than 30 years of feeding the Lehigh Valley.</p>
+    <div class="hero-ctas">
+      <a href="#menu" class="btn-primary">Explore the Menu</a>
+      <a href="#contact" class="btn-outline">Find Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- BADGE BAR -->
+<div class="badge-bar">
+  <div class="badge-item badge-bar-item">4.8 / 5 · Over 1,300 Reviews</div>
+  <div class="badge-item badge-bar-item">Fresh Cut to Order Daily</div>
+  <div class="badge-item badge-bar-item">Dine In · Take Out · Catering</div>
+  <div class="badge-item badge-bar-item">Lehigh Valley Favorite Since the '80s</div>
+  <div class="badge-item badge-bar-item">Special Hoagies · Gander Room Events</div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-image-wrap">
+    <img src="images/goose_counter.png" alt="Owner Tony behind the counter at The Goosemen deli">
+    <div class="about-image-accent"></div>
+  </div>
+  <div>
+    <div class="section-label">Our Story</div>
+    <h2 class="section-title">A neighborhood<br>institution.</h2>
+    <p class="section-intro" style="margin-bottom:1.5rem;">
+      Tucked just off the Lehigh University campus on W. 4th Street, The Goosemen has been a gathering spot for students, faculty, and South Side locals for decades.
+    </p>
+    <p class="section-intro">
+      Owner Tony runs the counter with the same warmth and care that's kept people coming back since the eighties. Meat is cut fresh to order, hoagies are piled high, and the specials are written on paper plates — because some things shouldn't change.
+    </p>
+    <div class="about-stats">
+      <div class="stat-box">
+        <div class="stat-num">30+</div>
+        <div class="stat-label">Years in Business</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">4.8★</div>
+        <div class="stat-label">Community Rating</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">1,300+</div>
+        <div class="stat-label">Happy Reviewers</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Regulars &amp; Friends</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+  <div class="gallery-header">
+    <div>
+      <div class="section-label">Food &amp; Atmosphere</div>
+      <h2 class="section-title">Made with love,<br>piled with meat.</h2>
+    </div>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item tall">
+      <img src="https://residenttouristbethlehempa.com/wp-content/uploads/2015/05/the-goose-1.jpg" alt="Deli counter with orders at The Goosemen">
+      <div class="gallery-caption">The Line Forms Here</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/goose_sandwich1.png" alt="A loaded Goosemen signature hoagie">
+      <div class="gallery-caption">The Signature Hoagie</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/goose_sandwich2.png" alt="Ham hoagie piled high at The Goosemen">
+      <div class="gallery-caption">The Gander — Piled High</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://residenttouristbethlehempa.com/wp-content/uploads/2015/05/the-goose-11.jpg" alt="Inside The Goosemen deli Bethlehem">
+      <div class="gallery-caption">Paper Plates &amp; Specials</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://residenttouristbethlehempa.com/wp-content/uploads/2015/05/the-goose-5.jpg" alt="Tony at the counter at The Goosemen">
+      <div class="gallery-caption">Tony — Right There That Is</div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu-section" id="menu">
+  <div class="section-label">What We're Making</div>
+  <h2 class="section-title">The Menu</h2>
+  <p class="section-intro">Classic hoagies, hot foods, deli delights, and a few specialties that keep people driving four hours just to get back here.</p>
+
+  <div class="menu-tabs">
+    <button class="menu-tab active" onclick="switchTab(this,'hot-foods')">Hot Foods</button>
+    <button class="menu-tab" onclick="switchTab(this,'hoagies')">Hoagies</button>
+    <button class="menu-tab" onclick="switchTab(this,'special-hoagies')">Special Hoagies</button>
+    <button class="menu-tab" onclick="switchTab(this,'ganders')">The Ganders</button>
+    <button class="menu-tab" onclick="switchTab(this,'deli-delites')">Deli Delites</button>
+    <button class="menu-tab" onclick="switchTab(this,'salads')">Salads</button>
+    <button class="menu-tab" onclick="switchTab(this,'sandwiches')">Sandwiches</button>
+    <button class="menu-tab" onclick="switchTab(this,'sides')">Sides &amp; Extras</button>
+  </div>
+
+  <!-- Hot Foods -->
+  <div class="menu-panel active" id="panel-hot-foods">
+    <div class="menu-grid">
+      <div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">The New-New-New</div>
+            <div class="menu-item-desc">Garlic pepper turkey, melted provolone on a Portuguese roll, lettuce &amp; tomato</div>
+          </div>
+          <div class="menu-item-price">$4.29</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">The Geuben</div>
+            <div class="menu-item-desc">Corned beef, melted Swiss, sauerkraut &amp; Russian dressing on toasted rye</div>
+          </div>
+          <div class="menu-item-price">$4.29</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">The Santa Fe</div>
+            <div class="menu-item-desc">Turkey breast, fire-roasted peppers, sundried tomatoes, melted hot pepper cheese on a Portuguese roll</div>
+          </div>
+          <div class="menu-item-price">$4.29</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Hot Roast Beef</div>
+            <div class="menu-item-desc">With gravy and melted cheese on a kaiser roll</div>
+          </div>
+          <div class="menu-item-price">$3.59</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Chicken Garm</div>
+            <div class="menu-item-desc">Boneless chicken breast, melted cheese, tomato sauce</div>
+          </div>
+          <div class="menu-item-price">$3.19</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Chicken Barbecue</div>
+            <div class="menu-item-desc">Boneless chicken breast, melted cheese, BBQ sauce</div>
+          </div>
+          <div class="menu-item-price">$3.19</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Guna Meld</div>
+            <div class="menu-item-desc">Fresh tuna, Swiss cheese, lettuce, tomato — stuffed, heated &amp; melted</div>
+          </div>
+          <div class="menu-item-price">$3.89</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">The Egg-Citing</div>
+            <div class="menu-item-desc">One egg, choice of bacon, ham or sausage, melted cheese on a roll</div>
+          </div>
+          <div class="menu-item-price">$1.69</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Meatball with Cheese</div>
+            <div class="menu-item-desc">Classic meatballs smothered in melted cheese</div>
+          </div>
+          <div class="menu-item-price">$2.69+</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Cheese Steak</div>
+            <div class="menu-item-desc">The Lehigh Valley classic</div>
+          </div>
+          <div class="menu-item-price">$3.19+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hoagies -->
+  <div class="menu-panel" id="panel-hoagies">
+    <div class="menu-grid">
+      <div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Ham &amp; Cheese</div></div><div class="menu-item-price">$4.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Italian</div></div><div class="menu-item-price">$4.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Goosey Hoagie</div><div class="menu-item-desc">Ham, cheese, hard salami</div></div><div class="menu-item-price">$4.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Roast Beef &amp; Cheese</div></div><div class="menu-item-price">$4.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Turkey &amp; Cheese</div></div><div class="menu-item-price">$4.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Cheese Steak Hoagie</div></div><div class="menu-item-price">$4.29</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Tuna &amp; Cheese</div></div><div class="menu-item-price">$4.19</div></div>
+      </div>
+      <div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Hard Salami &amp; Cheese</div></div><div class="menu-item-price">$4.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Polish Ham &amp; Cheese</div></div><div class="menu-item-price">$4.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Tavern Ham &amp; Cheese</div></div><div class="menu-item-price">$4.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Fire Hoagie</div><div class="menu-item-desc">Pepper ham</div></div><div class="menu-item-price">$4.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Chicken Breast &amp; Cheese</div></div><div class="menu-item-price">$4.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Chicken Salad &amp; Cheese</div></div><div class="menu-item-price">$4.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Egg Salad &amp; Cheese</div></div><div class="menu-item-price">$3.69</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Bologna &amp; Cheese</div></div><div class="menu-item-price">$3.69</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Special Hoagies -->
+  <div class="menu-panel" id="panel-special-hoagies">
+    <div class="menu-grid">
+      <div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Mamma Goosey Stuffa Your Face</div>
+            <div class="menu-item-desc">Pepper ham, capicola, salami, pepperoni &amp; provolone stuffed on a hoagie</div>
+          </div>
+          <div class="menu-item-price">$4.99</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Space Shuttle Special</div>
+            <div class="menu-item-desc">Take-off turkey, robot roast beef, and countdown cheese on a hoagie roll</div>
+          </div>
+          <div class="menu-item-price">$4.99</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">Black-out Hoagie</div>
+            <div class="menu-item-desc">Extra boiled ham, fresh turkey breast, and American cheese on a hoagie roll</div>
+          </div>
+          <div class="menu-item-price">$4.99</div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">The Gombo</div>
+            <div class="menu-item-desc">Two meats, cheese, bacon, lettuce &amp; tomato piled high on four slices of toasted rye, wheat or white</div>
+          </div>
+          <div class="menu-item-price">$4.99</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <div class="menu-item-name">The Shots</div>
+            <div class="menu-item-desc">Sante Fe turkey and roast beef with Swiss, piled high on rye, topped with coleslaw &amp; Russian dressing</div>
+          </div>
+          <div class="menu-item-price">$4.99</div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-note">Ask about our secret menu &amp; daily specials — written on the paper plates near the counter.</div>
+  </div>
+
+  <!-- Ganders -->
+  <div class="menu-panel" id="panel-ganders">
+    <p style="color:rgba(248,244,236,0.6); font-style:italic; font-family:'Source Serif 4',serif; margin-bottom:2rem;">Your choice of meat, cheese, bacon, lettuce &amp; tomato — piled high on three slices of toasted rye. A Goosemen signature.</p>
+    <div class="menu-grid">
+      <div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Roast Beef Gander</div></div><div class="menu-item-price">$4.29</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Turkey Gander</div></div><div class="menu-item-price">$4.29</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Ham Gander</div></div><div class="menu-item-price">$4.29</div></div>
+      </div>
+      <div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Chicken Gander</div></div><div class="menu-item-price">$4.29</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Tuna Gander</div></div><div class="menu-item-price">$4.29</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Crabmeat Gander</div></div><div class="menu-item-price">$4.29</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Deli Delites -->
+  <div class="menu-panel" id="panel-deli-delites">
+    <div class="menu-grid">
+      <div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Corned Beef, Swiss &amp; Cole Slaw on Rye</div></div><div class="menu-item-price">$4.29</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Turkey Breast, Swiss &amp; Cole Slaw on Rye</div></div><div class="menu-item-price">$4.29</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Hot Pastrami &amp; Swiss on Rye</div></div><div class="menu-item-price">$4.29</div></div>
+      </div>
+      <div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Ham, Swiss &amp; Cole Slaw on Rye</div></div><div class="menu-item-price">$4.29</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Roast Beef, Muenster &amp; Russian Dressing on Rye</div></div><div class="menu-item-price">$4.29</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Liverwurst &amp; Onion on Rye</div></div><div class="menu-item-price">$3.09</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Salads -->
+  <div class="menu-panel" id="panel-salads">
+    <div class="menu-grid">
+      <div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Goosey Special (Ham &amp; Cheese)</div></div><div class="menu-item-price">$3.99+</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Grilled Chicken Salad</div></div><div class="menu-item-price">$3.99+</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Seafood Salad</div></div><div class="menu-item-price">$3.99+</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Tuna &amp; Cheese Salad</div></div><div class="menu-item-price">$3.99+</div></div>
+      </div>
+      <div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Turkey &amp; Cheese Salad</div></div><div class="menu-item-price">$3.99+</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Chicken Salad &amp; Cheese</div></div><div class="menu-item-price">$3.99+</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Egg Salad &amp; Cheese</div></div><div class="menu-item-price">$3.69+</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Cheese Salad</div></div><div class="menu-item-price">$3.69+</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Tossed Salad</div></div><div class="menu-item-price">$2.09+</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sandwiches -->
+  <div class="menu-panel" id="panel-sandwiches">
+    <div class="menu-grid">
+      <div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Boiled Ham &amp; Cheese</div></div><div class="menu-item-price">$3.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Roast Beef &amp; Cheese</div></div><div class="menu-item-price">$3.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Turkey &amp; Cheese</div></div><div class="menu-item-price">$3.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Capicola &amp; Cheese</div></div><div class="menu-item-price">$3.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Tavern Ham &amp; Cheese</div></div><div class="menu-item-price">$3.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Tuna &amp; Cheese</div></div><div class="menu-item-price">$3.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Goosey BLT</div></div><div class="menu-item-price">$3.19</div></div>
+      </div>
+      <div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Bologna &amp; Cheese</div></div><div class="menu-item-price">$3.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Lebanon Bologna &amp; Cheese</div></div><div class="menu-item-price">$3.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Hard Salami &amp; Cheese</div></div><div class="menu-item-price">$3.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Polish Ham &amp; Cheese</div></div><div class="menu-item-price">$3.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Egg Salad &amp; Cheese</div></div><div class="menu-item-price">$3.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Chicken Breast &amp; Cheese</div></div><div class="menu-item-price">$3.19</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Gander in the Garden</div><div class="menu-item-desc">Veggie delight</div></div><div class="menu-item-price">$2.00</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sides -->
+  <div class="menu-panel" id="panel-sides">
+    <div class="menu-grid">
+      <div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Chili</div></div><div class="menu-item-price">$1.49+</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Cole Slaw</div></div><div class="menu-item-price">$0.99+</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Macaroni Salad</div></div><div class="menu-item-price">$0.99+</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Potato Salad</div></div><div class="menu-item-price">$0.99+</div></div>
+      </div>
+      <div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Deli Pickles</div></div><div class="menu-item-price">$0.69</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Pickled Eggs</div><div class="menu-item-desc">3 pieces</div></div><div class="menu-item-price">$1.25</div></div>
+        <div class="menu-item"><div class="menu-item-info"><div class="menu-item-name">Rolls</div></div><div class="menu-item-price">$0.25</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-note">Menu prices may have been updated since this listing. Call us at 610-868-0176 or visit for today's specials.</div>
+</section>
+
+<!-- GANDER ROOM -->
+<section class="gander-section" id="gander">
+  <div class="gander-image" style="display:flex; align-items:center; justify-content:center; background:#3D2B1F;">
+    <img src="images/goose_gander_logo.png" alt="The Gander Room logo" style="max-width:340px; width:80%; padding:2rem;">
+  </div>
+  <div class="gander-content">
+    <p>
+      Beyond the deli counter, The Goosemen hosts a full-service banquet facility — The Gander Room. Whether you're planning a birthday, rehearsal dinner, corporate gathering, or graduation party, we bring the same family warmth and hearty food to your special event.
+    </p>
+    <div class="gander-features">
+      <div class="gander-feat">Full-service banquet facility</div>
+      <div class="gander-feat">Custom catering for any occasion</div>
+      <div class="gander-feat">Flexible event hosting for groups of all sizes</div>
+      <div class="gander-feat">The same fresh, made-from-scratch menu</div>
+    </div>
+    <a href="tel:6108680176" class="btn-primary" style="display:inline-block;">Book Your Event — (610) 868-0176</a>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="reviews-header">
+    <div>
+      <div class="section-label">What People Are Saying</div>
+      <h2 class="section-title">Loved by Lehigh<br>Valley for decades.</h2>
+      <p class="section-intro" style="margin-top:1rem;">From first-time visitors to 20-year regulars — here's what keeps people coming back.</p>
+    </div>
+    <div class="rating-display">
+      <div class="rating-big">4.8</div>
+      <div class="rating-stars">★★★★★</div>
+      <div class="rating-count">Based on 1,300+ reviews</div>
+    </div>
+  </div>
+
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-quote">"</div>
+      <p class="review-text">I've had the best sandwiches of my life here and would drive four hours to Bethlehem just to get a New-New-New. This is a must if you're in the area looking for lunch.</p>
+      <div class="review-meta">
+        <div>
+          <div class="reviewer-name">TripAdvisor Reviewer</div>
+          <div class="review-source">via TripAdvisor</div>
+        </div>
+        <div class="reviewer-stars">★★★★★</div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-quote">"</div>
+      <p class="review-text">I've been coming here since the 1980s and it's just as good as it ever was. Quick service, great personalities. A Lehigh University institution. The Gueben and Blackout Hoagie are not to be missed.</p>
+      <div class="review-meta">
+        <div>
+          <div class="reviewer-name">40-Year Regular</div>
+          <div class="review-source">via TripAdvisor</div>
+        </div>
+        <div class="reviewer-stars">★★★★★</div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-quote">"</div>
+      <p class="review-text">This place was incredible. We went after a wrestling event and it was the best hoagie I've ever had. Prices are so reasonable — I wish I lived nearby so I could visit every week.</p>
+      <div class="review-meta">
+        <div>
+          <div class="reviewer-name">First-Time Visitor</div>
+          <div class="review-source">via TripAdvisor</div>
+        </div>
+        <div class="reviewer-stars">★★★★★</div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-quote">"</div>
+      <p class="review-text">The Aardvark hoagie — buffalo chicken, pepper ham, bacon, cheddar jack, hot sauce and mayo — is absolutely unreal. The owner is always at the counter and happy to make recommendations.</p>
+      <div class="review-meta">
+        <div>
+          <div class="reviewer-name">Local Regular</div>
+          <div class="review-source">via Restaurantji</div>
+        </div>
+        <div class="reviewer-stars">★★★★★</div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-quote">"</div>
+      <p class="review-text">Loaded with meat, owner Tony was right there making sandwiches. The Sante Fe Turkey on a Portuguese roll was incredible. Can never go wrong at this place — the line is always worth it.</p>
+      <div class="review-meta">
+        <div>
+          <div class="reviewer-name">Sports Tournament Dad</div>
+          <div class="review-source">via TripAdvisor</div>
+        </div>
+        <div class="reviewer-stars">★★★★★</div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-quote">"</div>
+      <p class="review-text">Fantastic food, genuine service, and a commitment to quality that's been consistent for decades. The pastrami with bacon and banana peppers is a standout. Rated 4.8 out of 5 — and it earns every star.</p>
+      <div class="review-meta">
+        <div>
+          <div class="reviewer-name">Restaurant Guru</div>
+          <div class="review-source">via Restaurant Guru · 1,366 Reviews</div>
+        </div>
+        <div class="reviewer-stars">★★★★★</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / HOURS / MAP -->
+<section class="contact-section" id="contact">
+  <div class="contact-col">
+    <div class="contact-col-title">Hours</div>
+    <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">7:30 AM – 4:00 PM</span></div>
+    <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time">7:30 AM – 4:00 PM</span></div>
+    <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">7:30 AM – 4:00 PM</span></div>
+    <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">7:30 AM – 4:00 PM</span></div>
+    <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">7:30 AM – 4:00 PM</span></div>
+    <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">10:00 AM – 4:00 PM</span></div>
+    <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">Select Sundays Only</span></div>
+    <p style="font-size:0.78rem; color:rgba(248,244,236,0.3); margin-top:1.4rem; line-height:1.6;">Peak lunch hours get busy — arrive before noon for the shortest wait. Worth every minute.</p>
+  </div>
+
+  <div class="contact-col">
+    <div class="contact-col-title">Find Us</div>
+    <div class="contact-detail">
+      <div class="contact-icon">📍</div>
+      <div>
+        <div class="contact-label">Address</div>
+        <div class="contact-value">102 W. Fourth Street<br>Bethlehem, PA 18015</div>
+      </div>
+    </div>
+    <div class="contact-detail">
+      <div class="contact-icon">📞</div>
+      <div>
+        <div class="contact-label">Phone</div>
+        <div class="contact-value"><a href="tel:6108680176" style="color:inherit; text-decoration:none;">(610) 868-0176</a></div>
+      </div>
+    </div>
+    <div class="contact-detail">
+      <div class="contact-icon">📠</div>
+      <div>
+        <div class="contact-label">Fax</div>
+        <div class="contact-value">(610) 868-6288</div>
+      </div>
+    </div>
+    <div class="social-links">
+      <a href="https://twitter.com/thegoosemen" class="social-link" target="_blank" rel="noopener">𝕏</a>
+      <a href="http://www.facebook.com/pages/Bethlehem-PA/The-Goose/16840181198" class="social-link" target="_blank" rel="noopener">f</a>
+    </div>
+  </div>
+
+  <div class="contact-col" style="padding:0; overflow:hidden;">
+    <iframe
+      class="map-embed"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.0469398523!2d-75.382264!3d40.609989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c43f0e60c2e3cf%3A0x4e5b9f0b1e0f0b5!2s102+W+4th+St%2C+Bethlehem%2C+PA+18015!5e0!3m2!1sen!2sus!4v1"
+      allowfullscreen
+      loading="lazy"
+      title="The Goosemen location map"
+    ></iframe>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">The Goosemen · Est. 1980s</div>
+  <div class="footer-legal">102 W. Fourth Street · Bethlehem, PA 18015 · (610) 868-0176</div>
+</footer>
+
+<script>
+  function switchTab(btn, panelId) {
+    document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + panelId).classList.add('active');
+  }
+</script>
+</body>
+</html>
